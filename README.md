@@ -3,26 +3,32 @@
 ## 00. 환경 구성
 
 1. NodeJS 설치 (npm 구축)
+
 2. `$ npm i -g @vue/cli`
-3. `$ vue init webpack hello-vue`
-4. `$ npm start`
 
-Linting Error 해결법:
+3. `$ vue create <project-name> `
 
-1.
+4. bootstrap 필요할 때: `$ npm i bootstrap-vue bootstrap` 
 
-build /webpack.base.conf.js파일에서 모듈-> 규칙의 eslint에 대한 규칙을 주석 처리하거나 삭제.
+   - `main.js`에 다음 코드 추가
 
-`````` javascript
-module: {
-    rules: [
-//    ...(config.dev.useEslint ? [createLintingRule()] : []),
-``````
-
-2.
-
-프로젝트에 `config\index.js`파일에서 `useEslint: false`로 변경
+   - ```javascript
+     import BootstrapVue from 'bootstrap-vue'
+     import 'bootstrap/dist/css/bootstrap.min.css'
+     import 'bootstrap-vue/dist/bootstrap-vue.css'
+     
+     Vue.use(BootstrapVue)
+     ```
 
 
 
-## 01. 
+## 01. Vue 프로젝트 구성
+
+**`App.vue`**: 메인페이지
+
+`/views`: link 별 개별 페이지
+
+`components`: 메인, 개별 페이지의 반응형 요소들
+
+
+
